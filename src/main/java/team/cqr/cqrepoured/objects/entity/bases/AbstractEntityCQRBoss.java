@@ -10,15 +10,32 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
 
-public abstract class AbstractEntityCQRBoss extends AbstractEntityCQR implements IBlacklistedFromStatues {
+public abstract class AbstractEntityCQRBoss<C extends AbstractBossConfig<?>> extends AbstractEntityCQR implements IBlacklistedFromStatues {
 
+	public abstract C getBossConfig();
+	
 	public static final int MAX_DEATH_TICKS = 200;
 
 	public AbstractEntityCQRBoss(World worldIn) {
 		super(worldIn);
 		this.experienceValue = 50;
 		this.enableBossBar();
+	}
+	
+	@Override
+	public float getBaseHealth() {
+		return this.getBossConfig().getBaseHealth();
+	}
+	
+	public double getBaseSpeed() {
+		return this.getBossConfig().getBaseSpeed();
+	}
+	
+	@Override
+	protected boolean isBossBarEnabledInConfig() {
+		return super.isBossBarEnabledInConfig() && this.getBossConfig().isBossBarEnabled();
 	}
 
 	@Override
@@ -30,7 +47,7 @@ public abstract class AbstractEntityCQRBoss extends AbstractEntityCQR implements
 			}
 		}
 		for (int i = 0; i < nearbyPlayerCount - 1; i++) {
-			amount *= 1.0F - CQRConfig.mobs.bossDamageReductionPerPlayer;
+			amount *= 1.0F - this.getBossConfig().getDamageReductionPerPlayer();
 		}
 		return super.attackEntityFrom(source, amount, sentFromPart);
 	}
@@ -50,7 +67,7 @@ public abstract class AbstractEntityCQRBoss extends AbstractEntityCQR implements
 
 	@Override
 	public void onLivingUpdate() {
-		if (CQRConfig.bosses.enableHealthRegen && !this.hasAttackTarget() && this.lastTickWithAttackTarget + 100 < this.ticksExisted && this.ticksExisted % 5 == 0) {
+		if (this.getBossConfig().isHealthRegenEnabled() && !this.hasAttackTarget() && this.lastTickWithAttackTarget + 100 < this.ticksExisted && this.ticksExisted % 5 == 0) {
 			this.heal(this.getMaxHealth() * 0.005F);
 		}
 		super.onLivingUpdate();
@@ -121,17 +138,17 @@ public abstract class AbstractEntityCQRBoss extends AbstractEntityCQR implements
 	// Damage cap stuff
 	@Override
 	protected boolean damageCapEnabled() {
-		return CQRConfig.bossDamageCaps.enableDamageCapForBosses;
+		return CQRConfig.bossDamageCaps.enableDamageCapForBosses && this.getBossConfig().isDamageCapEnabled();
 	}
 
 	@Override
 	protected float maxDamageInPercentOfMaxHP() {
-		return CQRConfig.bossDamageCaps.maxDamageInPercentOfMaxHP;
+		return this.getBossConfig().getMaxDamageInPercentOfMaxHP();
 	}
 
 	@Override
 	protected float maxUncappedDamage() {
-		return CQRConfig.bossDamageCaps.maxUncappedDamage;
+		return this.getBossConfig().getMaxUncappedDamage();
 	}
 	
 	@Override

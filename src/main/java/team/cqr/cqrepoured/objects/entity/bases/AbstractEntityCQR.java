@@ -243,8 +243,12 @@ public abstract class AbstractEntityCQR extends EntityCreature implements IMob, 
 	public void enableBossBar() {
 		if (!this.world.isRemote && this.bossInfoServer == null) {
 			this.bossInfoServer = new BossInfoServer(this.getDisplayName(), BossInfo.Color.RED, BossInfo.Overlay.NOTCHED_10);
-			this.bossInfoServer.setVisible(CQRConfig.bosses.enableBossBars);
+			this.bossInfoServer.setVisible(this.isBossBarEnabledInConfig());
 		}
+	}
+	
+	protected boolean isBossBarEnabledInConfig() {
+		return CQRConfig.bosses.enableBossBars;
 	}
 
 	@Override
