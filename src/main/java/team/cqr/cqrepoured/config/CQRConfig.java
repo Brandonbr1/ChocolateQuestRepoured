@@ -14,9 +14,11 @@ import team.cqr.cqrepoured.config.boss.implementations.BossConfigBoarmage;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigEnderCalamity;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigEnderKing;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigExterminator;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigGiantSpider;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigGiantTortoise;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigLich;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigNecromancer;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigNetherDragon;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigPirateCaptain;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigSpecterLord;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigWalkerKing;
@@ -217,11 +219,13 @@ public class CQRConfig {
 		public BossConfigEnderKing enderKingConfig = new BossConfigEnderKing();
 		public BossConfigExterminator exterminatorConfig = new BossConfigExterminator();
 		public BossConfigGiantTortoise giantTortoiseConfig = new BossConfigGiantTortoise();
-		public BossConfigLich kichConfig = new BossConfigLich();
+		public BossConfigLich lichConfig = new BossConfigLich();
 		public BossConfigNecromancer necromancerConfig = new BossConfigNecromancer();
 		public BossConfigPirateCaptain pirateCaptainConfig = new BossConfigPirateCaptain();
 		public BossConfigSpecterLord spectreLordConfig = new BossConfigSpecterLord();
 		public BossConfigWalkerKing walkerKingConfig = new BossConfigWalkerKing();
+		public BossConfigGiantSpider giantSpiderConfig = new BossConfigGiantSpider();
+		public BossConfigNetherDragon netherDragonConfig = new BossConfigNetherDragon();
 	}
 
 	public static class BossDamageCaps {
