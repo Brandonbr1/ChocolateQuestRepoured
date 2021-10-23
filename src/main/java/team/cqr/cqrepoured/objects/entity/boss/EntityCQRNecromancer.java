@@ -16,6 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigNecromancer;
 import team.cqr.cqrepoured.factions.CQRFaction;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRLoottables;
@@ -27,7 +28,7 @@ import team.cqr.cqrepoured.objects.entity.misc.EntityFlyingSkullMinion;
 import team.cqr.cqrepoured.objects.entity.misc.EntitySummoningCircle.ECircleTexture;
 import team.cqr.cqrepoured.util.Reference;
 
-public class EntityCQRNecromancer extends AbstractEntityCQRMageBase implements ISummoner {
+public class EntityCQRNecromancer extends AbstractEntityCQRMageBase<BossConfigNecromancer> implements ISummoner {
 
 	private static final DataParameter<Boolean> BONE_SHIELD_ACTIVE = EntityDataManager.<Boolean>createKey(EntityCQRNecromancer.class, DataSerializers.BOOLEAN);
 
@@ -201,6 +202,11 @@ public class EntityCQRNecromancer extends AbstractEntityCQRMageBase implements I
 
 	public boolean isBoneShieldActive() {
 		return this.dataManager.get(BONE_SHIELD_ACTIVE);
+	}
+
+	@Override
+	public BossConfigNecromancer getBossConfig() {
+		return CQRConfig.bosses.necromancerConfig;
 	}
 
 }

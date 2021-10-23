@@ -31,6 +31,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import team.cqr.cqrepoured.CQRMain;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigExterminator;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRLoottables;
 import team.cqr.cqrepoured.network.server.packet.exterminator.SPacketUpdateEmitterTarget;
@@ -49,7 +50,7 @@ import team.cqr.cqrepoured.util.DungeonGenUtils;
 import team.cqr.cqrepoured.util.PartialTicksUtil;
 import team.cqr.cqrepoured.util.VectorUtil;
 
-public class EntityCQRExterminator extends AbstractEntityCQRBoss implements IMechanical, IDontRenderFire, IEntityMultiPart, IAnimatable, IServerAnimationReceiver {
+public class EntityCQRExterminator extends AbstractEntityCQRBoss<BossConfigExterminator> implements IMechanical, IDontRenderFire, IEntityMultiPart, IAnimatable, IServerAnimationReceiver {
 
 	// Entity parts
 	// 0 => Backpack
@@ -845,6 +846,11 @@ public class EntityCQRExterminator extends AbstractEntityCQRBoss implements IMec
 		} else {
 			this.setElectroCuteTargetLeft(null);
 		}
+	}
+
+	@Override
+	public BossConfigExterminator getBossConfig() {
+		return CQRConfig.bosses.exterminatorConfig;
 	}
 
 }

@@ -19,6 +19,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigSpecterLord;
 import team.cqr.cqrepoured.factions.CQRFaction;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRLoottables;
@@ -31,7 +33,7 @@ import team.cqr.cqrepoured.objects.entity.ai.target.TargetUtil;
 import team.cqr.cqrepoured.objects.entity.bases.AbstractEntityCQRBoss;
 import team.cqr.cqrepoured.objects.entity.bases.ISummoner;
 
-public class EntityCQRSpectreLord extends AbstractEntityCQRBoss implements ISummoner {
+public class EntityCQRSpectreLord extends AbstractEntityCQRBoss<BossConfigSpecterLord> implements ISummoner {
 
 	private static final DataParameter<Integer> SWORD_SHIELD_ACTIVE = EntityDataManager.<Integer>createKey(EntityCQRSpectreLord.class, DataSerializers.VARINT);
 	private static final DataParameter<Boolean> CHANNELING_LASER = EntityDataManager.<Boolean>createKey(EntityCQRSpectreLord.class, DataSerializers.BOOLEAN);
@@ -196,6 +198,11 @@ public class EntityCQRSpectreLord extends AbstractEntityCQRBoss implements ISumm
 	@Override
 	public void addSummonedEntityToList(Entity summoned) {
 		this.summonedEntities.add(summoned);
+	}
+
+	@Override
+	public BossConfigSpecterLord getBossConfig() {
+		return CQRConfig.bosses.spectreLordConfig;
 	}
 
 }

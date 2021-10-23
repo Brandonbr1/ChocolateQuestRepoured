@@ -27,6 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigGiantSpider;
 import team.cqr.cqrepoured.factions.CQRFaction;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRItems;
@@ -46,7 +47,7 @@ import team.cqr.cqrepoured.objects.entity.ai.target.EntityAIHurtByTarget;
 import team.cqr.cqrepoured.objects.entity.bases.AbstractEntityCQRBoss;
 import team.cqr.cqrepoured.objects.entity.bases.ISummoner;
 
-public class EntityCQRGiantSpider extends AbstractEntityCQRBoss implements ISummoner {
+public class EntityCQRGiantSpider extends AbstractEntityCQRBoss<BossConfigGiantSpider> implements ISummoner {
 
 	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntityCQRGiantSpider.class, DataSerializers.BYTE);
 
@@ -287,6 +288,11 @@ public class EntityCQRGiantSpider extends AbstractEntityCQRBoss implements ISumm
 	@Override
 	public boolean canBePushed() {
 		return false;
+	}
+
+	@Override
+	public BossConfigGiantSpider getBossConfig() {
+		return CQRConfig.bosses.giantSpiderConfig;
 	}
 
 }

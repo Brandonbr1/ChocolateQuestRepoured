@@ -48,6 +48,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import team.cqr.cqrepoured.CQRMain;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigEnderCalamity;
 import team.cqr.cqrepoured.factions.CQRFaction;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRCreatureAttributes;
@@ -79,7 +80,7 @@ import team.cqr.cqrepoured.util.DungeonGenUtils;
 
 // DONE: Move the minion & lightning handling to a AI class, it is cleaner that way
 // DONE: Create helper classes to control arm management (status, animations, etc)
-public class EntityCQREnderCalamity extends AbstractEntityCQRBoss implements IAnimatable, ISummoner, ICirclingEntity, IServerAnimationReceiver {
+public class EntityCQREnderCalamity extends AbstractEntityCQRBoss<BossConfigEnderCalamity> implements IAnimatable, ISummoner, ICirclingEntity, IServerAnimationReceiver {
 
 	private static final int HURT_DURATION = 24; // 1.2 * 20
 	private static final int ARENA_RADIUS = 20;
@@ -1175,6 +1176,11 @@ public class EntityCQREnderCalamity extends AbstractEntityCQRBoss implements IAn
 			item.motionZ = vz;
 			item.velocityChanged = true;
 		}
+	}
+
+	@Override
+	public BossConfigEnderCalamity getBossConfig() {
+		return CQRConfig.bosses.enderCalamityConfig;
 	}
 
 }

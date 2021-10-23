@@ -10,6 +10,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigBoarmage;
 import team.cqr.cqrepoured.factions.CQRFaction;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRLoottables;
@@ -21,7 +22,7 @@ import team.cqr.cqrepoured.objects.entity.ai.spells.EntityAISummonFireWall;
 import team.cqr.cqrepoured.objects.entity.ai.spells.EntityAISummonMeteors;
 import team.cqr.cqrepoured.objects.entity.bases.ISummoner;
 
-public class EntityCQRBoarmage extends AbstractEntityCQRMageBase implements ISummoner {
+public class EntityCQRBoarmage extends AbstractEntityCQRMageBase<BossConfigBoarmage> implements ISummoner {
 
 	protected List<Entity> summonedMinions = new ArrayList<>();
 
@@ -140,6 +141,11 @@ public class EntityCQRBoarmage extends AbstractEntityCQRMageBase implements ISum
 	@Override
 	public boolean canPutOutFire() {
 		return false;
+	}
+
+	@Override
+	public BossConfigBoarmage getBossConfig() {
+		return CQRConfig.bosses.boarmageConfig;
 	}
 
 }

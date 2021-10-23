@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigLich;
 import team.cqr.cqrepoured.factions.CQRFaction;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRBlocks;
@@ -26,7 +27,7 @@ import team.cqr.cqrepoured.objects.entity.bases.ISummoner;
 import team.cqr.cqrepoured.objects.entity.misc.EntitySummoningCircle.ECircleTexture;
 import team.cqr.cqrepoured.util.Reference;
 
-public class EntityCQRLich extends AbstractEntityCQRMageBase implements ISummoner {
+public class EntityCQRLich extends AbstractEntityCQRMageBase<BossConfigLich> implements ISummoner {
 
 	protected List<Entity> summonedMinions = new ArrayList<>();
 	protected BlockPos currentPhylacteryPosition = null;
@@ -172,6 +173,11 @@ public class EntityCQRLich extends AbstractEntityCQRMageBase implements ISummone
 
 	public boolean hasPhylactery() {
 		return (this.currentPhylacteryPosition != null && (this.world.getBlockState(this.currentPhylacteryPosition).getBlock() == CQRBlocks.PHYLACTERY));
+	}
+
+	@Override
+	public BossConfigLich getBossConfig() {
+		return CQRConfig.bosses.lichConfig;
 	}
 
 }

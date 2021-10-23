@@ -15,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigPirateCaptain;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRItems;
 import team.cqr.cqrepoured.init.CQRLoottables;
@@ -27,7 +28,7 @@ import team.cqr.cqrepoured.objects.entity.ai.boss.piratecaptain.BossAIPirateTurn
 import team.cqr.cqrepoured.objects.entity.bases.AbstractEntityCQRBoss;
 import team.cqr.cqrepoured.util.reflection.ReflectionField;
 
-public class EntityCQRPirateCaptain extends AbstractEntityCQRBoss {
+public class EntityCQRPirateCaptain extends AbstractEntityCQRBoss<BossConfigPirateCaptain> {
 
 	private static final ReflectionField POTION_BENEFICIAL = new ReflectionField(Potion.class, "field_188415_h", "beneficial");
 	private static final DataParameter<Boolean> IS_DISINTEGRATING = EntityDataManager.<Boolean>createKey(EntityCQRPirateCaptain.class, DataSerializers.BOOLEAN);
@@ -164,5 +165,10 @@ public class EntityCQRPirateCaptain extends AbstractEntityCQRBoss {
 	@Override
 	protected int getInvisibilityTurningTime() {
 		return EntityCQRPirateCaptain.TURN_INVISIBLE_ANIMATION_TIME;
+	}
+
+	@Override
+	public BossConfigPirateCaptain getBossConfig() {
+		return CQRConfig.bosses.pirateCaptainConfig;
 	}
 }

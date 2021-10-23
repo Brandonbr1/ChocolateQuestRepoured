@@ -40,6 +40,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigNetherDragon;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRBlocks;
 import team.cqr.cqrepoured.init.CQRLoottables;
@@ -62,7 +63,7 @@ import team.cqr.cqrepoured.objects.entity.projectiles.ProjectileHotFireball;
 import team.cqr.cqrepoured.util.EntityUtil;
 import team.cqr.cqrepoured.util.VectorUtil;
 
-public class EntityCQRNetherDragon extends AbstractEntityCQRBoss implements IEntityMultiPart, IRangedAttackMob, ICirclingEntity, IDontRenderFire {
+public class EntityCQRNetherDragon extends AbstractEntityCQRBoss<BossConfigNetherDragon> implements IEntityMultiPart, IRangedAttackMob, ICirclingEntity, IDontRenderFire {
 
 	/**
 	 * AI: Circle around about 30 blocks above your home location in a radius of ~30 blocks
@@ -946,6 +947,11 @@ public class EntityCQRNetherDragon extends AbstractEntityCQRBoss implements IEnt
 	@Override
 	public boolean canbeTurnedToStone() {
 		return false;
+	}
+
+	@Override
+	public BossConfigNetherDragon getBossConfig() {
+		return CQRConfig.bosses.netherDragonConfig;
 	}
 
 }

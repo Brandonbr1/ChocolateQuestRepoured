@@ -38,6 +38,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigWalkerKing;
 import team.cqr.cqrepoured.factions.CQRFaction;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.factions.FactionRegistry;
@@ -60,7 +61,7 @@ import team.cqr.cqrepoured.objects.items.armor.ItemArmorDyable;
 import team.cqr.cqrepoured.util.DungeonGenUtils;
 import team.cqr.cqrepoured.util.VectorUtil;
 
-public class EntityCQRWalkerKing extends AbstractEntityCQRBoss {
+public class EntityCQRWalkerKing extends AbstractEntityCQRBoss<BossConfigWalkerKing> {
 
 	private int lightningTick = 0;
 	private int borderLightning = 20;
@@ -620,6 +621,11 @@ public class EntityCQRWalkerKing extends AbstractEntityCQRBoss {
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return CQRCreatureAttributes.CREATURE_TYPE_ABYSS_WALKER;
+	}
+
+	@Override
+	public BossConfigWalkerKing getBossConfig() {
+		return CQRConfig.bosses.walkerKingConfig;
 	}
 
 }

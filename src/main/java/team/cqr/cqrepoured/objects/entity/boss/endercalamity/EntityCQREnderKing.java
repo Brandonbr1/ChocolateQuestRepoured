@@ -25,6 +25,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigEnderKing;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRCreatureAttributes;
 import team.cqr.cqrepoured.init.CQRItems;
@@ -38,7 +39,7 @@ import team.cqr.cqrepoured.structureprot.ServerProtectedRegionManager;
 import team.cqr.cqrepoured.util.DungeonGenUtils;
 import team.cqr.cqrepoured.util.EntityUtil;
 
-public class EntityCQREnderKing extends AbstractEntityCQRBoss {
+public class EntityCQREnderKing extends AbstractEntityCQRBoss<BossConfigEnderKing> {
 
 	protected static final DataParameter<Boolean> WIDE = EntityDataManager.<Boolean>createKey(EntityCQREnderKing.class, DataSerializers.BOOLEAN);
 
@@ -275,6 +276,11 @@ public class EntityCQREnderKing extends AbstractEntityCQRBoss {
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.dataManager.set(WIDE, compound.getBoolean("wide_enderman"));
+	}
+
+	@Override
+	public BossConfigEnderKing getBossConfig() {
+		return CQRConfig.bosses.enderKingConfig;
 	}
 
 }

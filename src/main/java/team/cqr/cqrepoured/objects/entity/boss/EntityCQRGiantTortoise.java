@@ -37,6 +37,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import team.cqr.cqrepoured.config.CQRConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigGiantTortoise;
 import team.cqr.cqrepoured.factions.EDefaultFaction;
 import team.cqr.cqrepoured.init.CQRLoottables;
 import team.cqr.cqrepoured.objects.entity.ai.EntityAIIdleSit;
@@ -52,7 +53,7 @@ import team.cqr.cqrepoured.objects.entity.bases.AbstractEntityCQRBoss;
 import team.cqr.cqrepoured.objects.entity.boss.subparts.EntityCQRGiantTortoisePart;
 import team.cqr.cqrepoured.util.VectorUtil;
 
-public class EntityCQRGiantTortoise extends AbstractEntityCQRBoss implements IEntityMultiPart, IRangedAttackMob, IAnimatable {
+public class EntityCQRGiantTortoise extends AbstractEntityCQRBoss<BossConfigGiantTortoise> implements IEntityMultiPart, IRangedAttackMob, IAnimatable {
 
 	public static class AnimationGecko {
 		private final String animationName;
@@ -724,6 +725,11 @@ public class EntityCQRGiantTortoise extends AbstractEntityCQRBoss implements IEn
 
 			this.onFinalDeath();
 		}
+	}
+
+	@Override
+	public BossConfigGiantTortoise getBossConfig() {
+		return CQRConfig.bosses.giantTortoiseConfig;
 	}
 
 }
