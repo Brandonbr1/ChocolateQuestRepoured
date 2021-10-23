@@ -4,7 +4,7 @@ import net.minecraftforge.common.config.Config;
 import team.cqr.cqrepoured.objects.entity.bases.AbstractEntityCQRBoss;
 
 @Config.RequiresWorldRestart
-public abstract class AbstractBossConfig<T extends AbstractEntityCQRBoss> {
+public abstract class AbstractBossConfig<T extends AbstractEntityCQRBoss<? extends AbstractBossConfig<T>>> {
 	
 	//Fields
 	public float baseHealth = this.getBaseHealthDefaultValue();
