@@ -10,7 +10,6 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
-import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigBoarmage;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigEnderCalamity;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigEnderKing;
@@ -20,16 +19,8 @@ import team.cqr.cqrepoured.config.boss.implementations.BossConfigLich;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigNecromancer;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigPirateCaptain;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigSpecterLord;
-import team.cqr.cqrepoured.objects.entity.boss.EntityCQRBoarmage;
 import team.cqr.cqrepoured.objects.entity.boss.EntityCQRGiantTortoise;
-import team.cqr.cqrepoured.objects.entity.boss.EntityCQRLich;
-import team.cqr.cqrepoured.objects.entity.boss.EntityCQRNecromancer;
 import team.cqr.cqrepoured.objects.entity.boss.EntityCQRNetherDragon;
-import team.cqr.cqrepoured.objects.entity.boss.EntityCQRPirateCaptain;
-import team.cqr.cqrepoured.objects.entity.boss.endercalamity.EntityCQREnderCalamity;
-import team.cqr.cqrepoured.objects.entity.boss.endercalamity.EntityCQREnderKing;
-import team.cqr.cqrepoured.objects.entity.boss.exterminator.EntityCQRExterminator;
-import team.cqr.cqrepoured.objects.entity.boss.spectrelord.EntityCQRSpectreLord;
 import team.cqr.cqrepoured.structuregen.structurefile.CQStructure;
 import team.cqr.cqrepoured.structureprot.ProtectedRegionHelper;
 import team.cqr.cqrepoured.util.Reference;
@@ -220,15 +211,15 @@ public class CQRConfig {
 		public int enderCalamityHealingCrystalAbsorbAmount = 40;
 		
 		//Boss configs per entity
-		public AbstractBossConfig<EntityCQRBoarmage> boarmageConfig = new BossConfigBoarmage();
-		public AbstractBossConfig<EntityCQREnderCalamity> enderCalamityConfig = new BossConfigEnderCalamity();
-		public AbstractBossConfig<EntityCQREnderKing> enderKingConfig = new BossConfigEnderKing();
-		public AbstractBossConfig<EntityCQRExterminator> exterminatorConfig = new BossConfigExterminator();
-		public AbstractBossConfig<EntityCQRGiantTortoise> giantTortoiseConfig = new BossConfigGiantTortoise();
-		public AbstractBossConfig<EntityCQRLich> kichConfig = new BossConfigLich();
-		public AbstractBossConfig<EntityCQRNecromancer> necromancerConfig = new BossConfigNecromancer();
-		public AbstractBossConfig<EntityCQRPirateCaptain> pirateCaptainConfig = new BossConfigPirateCaptain();
-		public AbstractBossConfig<EntityCQRSpectreLord> spectreLordConfig = new BossConfigSpecterLord();
+		public BossConfigBoarmage boarmageConfig = new BossConfigBoarmage();
+		public BossConfigEnderCalamity enderCalamityConfig = new BossConfigEnderCalamity();
+		public BossConfigEnderKing enderKingConfig = new BossConfigEnderKing();
+		public BossConfigExterminator exterminatorConfig = new BossConfigExterminator();
+		public BossConfigGiantTortoise giantTortoiseConfig = new BossConfigGiantTortoise();
+		public BossConfigLich kichConfig = new BossConfigLich();
+		public BossConfigNecromancer necromancerConfig = new BossConfigNecromancer();
+		public BossConfigPirateCaptain pirateCaptainConfig = new BossConfigPirateCaptain();
+		public BossConfigSpecterLord spectreLordConfig = new BossConfigSpecterLord();
 	}
 
 	public static class BossDamageCaps {
