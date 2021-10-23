@@ -1,7 +1,8 @@
 package team.cqr.cqrepoured.config.boss.implementations;
 
 import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
+import team.cqr.cqrepoured.objects.entity.boss.spectrelord.EntityCQRSpectreLord;
 
-public class BossConfigSpecterLord extends AbstractBossConfig<T> {
+public class BossConfigSpecterLord extends AbstractBossConfig<EntityCQRSpectreLord> {
 
 }
