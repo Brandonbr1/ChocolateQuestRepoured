@@ -10,8 +10,26 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigBoarmage;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigEnderCalamity;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigEnderKing;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigExterminator;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigGiantTortoise;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigLich;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigNecromancer;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigPirateCaptain;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigSpecterLord;
+import team.cqr.cqrepoured.objects.entity.boss.EntityCQRBoarmage;
 import team.cqr.cqrepoured.objects.entity.boss.EntityCQRGiantTortoise;
+import team.cqr.cqrepoured.objects.entity.boss.EntityCQRLich;
+import team.cqr.cqrepoured.objects.entity.boss.EntityCQRNecromancer;
 import team.cqr.cqrepoured.objects.entity.boss.EntityCQRNetherDragon;
+import team.cqr.cqrepoured.objects.entity.boss.EntityCQRPirateCaptain;
+import team.cqr.cqrepoured.objects.entity.boss.endercalamity.EntityCQREnderCalamity;
+import team.cqr.cqrepoured.objects.entity.boss.endercalamity.EntityCQREnderKing;
+import team.cqr.cqrepoured.objects.entity.boss.exterminator.EntityCQRExterminator;
+import team.cqr.cqrepoured.objects.entity.boss.spectrelord.EntityCQRSpectreLord;
 import team.cqr.cqrepoured.structuregen.structurefile.CQStructure;
 import team.cqr.cqrepoured.structureprot.ProtectedRegionHelper;
 import team.cqr.cqrepoured.util.Reference;
@@ -150,7 +168,6 @@ public class CQRConfig {
 		public boolean antiCowardMode = true;
 		public boolean preventBlockPlacingNearBosses = false;
 		public int antiCowardRadius = 16;
-		public boolean enableHealthRegen = true;
 		@Config.RequiresWorldRestart
 		@Config.Comment("WARNING: This WILL affect every player on the server or your lan world! Changing this as a player on a server does not have any effect")
 		public boolean enableBossBars = true;
@@ -201,12 +218,21 @@ public class CQRConfig {
 		public boolean calamityBlockEquipParticles = true;
 		public int netherDragonLength = 28;
 		public int enderCalamityHealingCrystalAbsorbAmount = 40;
+		
+		//Boss configs per entity
+		public AbstractBossConfig<EntityCQRBoarmage> boarmageConfig = new BossConfigBoarmage();
+		public AbstractBossConfig<EntityCQREnderCalamity> enderCalamityConfig = new BossConfigEnderCalamity();
+		public AbstractBossConfig<EntityCQREnderKing> enderKingConfig = new BossConfigEnderKing();
+		public AbstractBossConfig<EntityCQRExterminator> exterminatorConfig = new BossConfigExterminator();
+		public AbstractBossConfig<EntityCQRGiantTortoise> giantTortoiseConfig = new BossConfigGiantTortoise();
+		public AbstractBossConfig<EntityCQRLich> kichConfig = new BossConfigLich();
+		public AbstractBossConfig<EntityCQRNecromancer> necromancerConfig = new BossConfigNecromancer();
+		public AbstractBossConfig<EntityCQRPirateCaptain> pirateCaptainConfig = new BossConfigPirateCaptain();
+		public AbstractBossConfig<EntityCQRSpectreLord> spectreLordConfig = new BossConfigSpecterLord();
 	}
 
 	public static class BossDamageCaps {
 		public boolean enableDamageCapForBosses = true;
-		public float maxUncappedDamage = 30F;
-		public float maxDamageInPercentOfMaxHP = 0.1F;
 	}
 
 	public static class DungeonProtection {
