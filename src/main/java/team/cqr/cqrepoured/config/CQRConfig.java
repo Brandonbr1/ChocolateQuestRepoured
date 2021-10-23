@@ -418,28 +418,6 @@ public class CQRConfig {
 		public float Zombie = 25F;
 		@Config.RangeDouble(min = 1, max = 1000)
 		public float Mandril = 30F;
-
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float NetherDragon = 250F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float GiantTortoise = 400F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float Lich = 200F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float Necromancer = 150F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float Boarmage = 250F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float AbyssWalkerKing = 300F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float PirateCaptain = 200F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float GiantSpider = 150F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float EnderCalamity = 300F;
-		@Config.RangeDouble(min = 1, max = 1000)
-		public float Exterminatior = 200F;
-
 	}
 
 	private static Boolean aprilFoolsResult = null;
