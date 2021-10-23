@@ -287,7 +287,7 @@ public abstract class AbstractEntityCQR extends EntityCreature implements IMob, 
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		// speed (in blocks per second) = x^2 * 0.98 / (1 - slipperiness * 0.91) * 20 -> usually slipperiness = 0.6
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.getBaseSpeed());
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(this.getBaseHealth());
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_SPEED);
 	}
@@ -1069,6 +1069,10 @@ public abstract class AbstractEntityCQR extends EntityCreature implements IMob, 
 	}
 
 	public abstract float getBaseHealth();
+	
+	public double getBaseSpeed() {
+		return 0.25D;
+	}
 
 	public void setBaseHealthDependingOnPos(BlockPos pos) {
 		if (CQRConfig.mobs.enableHealthChangeOnDistance && !this.world.isRemote) {
