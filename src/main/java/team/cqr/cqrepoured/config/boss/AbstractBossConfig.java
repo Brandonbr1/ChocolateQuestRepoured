@@ -7,6 +7,7 @@ import team.cqr.cqrepoured.objects.entity.bases.AbstractEntityCQRBoss;
 public abstract class AbstractBossConfig<T extends AbstractEntityCQRBoss<? extends AbstractBossConfig<T>>> {
 	
 	//Fields
+	@Config.RangeDouble(min = 1, max = 1000)
 	public float baseHealth = this.getBaseHealthDefaultValue();
 	public double standardAttackDamage = this.getStandardAttackDamageDefaultValue();
 	public double baseSpeed = this.getBaseSpeedDefaultValue();
