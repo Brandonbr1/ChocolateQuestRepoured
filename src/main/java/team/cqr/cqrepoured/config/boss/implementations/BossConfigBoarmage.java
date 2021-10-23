@@ -9,12 +9,12 @@ public class BossConfigBoarmage extends AbstractBossConfig<EntityCQRBoarmage> {
 		return 250F;
 	}
 
-	//These are all the same accross all bosses
+	// These are all the same accross all bosses
 	@Override
 	protected double getStandardAttackDamageDefaultValue() {
 		return 2.0D;
 	}
-	
+
 	@Override
 	protected double getBaseSpeedDefaultValue() {
 		return 0.25D;
