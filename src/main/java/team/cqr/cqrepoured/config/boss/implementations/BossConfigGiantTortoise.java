@@ -4,7 +4,11 @@ import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
 import team.cqr.cqrepoured.objects.entity.boss.EntityCQRGiantTortoise;
 
 public class BossConfigGiantTortoise extends AbstractBossConfig<EntityCQRGiantTortoise> {
-	//These are all the same accross all bosses
+	
+	@Override
+	protected float getBaseHealthDefaultValue() {
+		return 400F;
+	}	//These are all the same accross all bosses
 		@Override
 		protected double getStandardAttackDamageDefaultValue() {
 			return 2.0D;

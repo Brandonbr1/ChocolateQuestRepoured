@@ -4,7 +4,11 @@ import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
 import team.cqr.cqrepoured.objects.entity.boss.spectrelord.EntityCQRSpectreLord;
 
 public class BossConfigSpecterLord extends AbstractBossConfig<EntityCQRSpectreLord> {
-
+	
+	@Override
+	protected float getBaseHealthDefaultValue() {
+		return 200F;
+	}
 	//These are all the same accross all bosses
 		@Override
 		protected double getStandardAttackDamageDefaultValue() {

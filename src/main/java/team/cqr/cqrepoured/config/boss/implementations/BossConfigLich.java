@@ -4,7 +4,11 @@ import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
 import team.cqr.cqrepoured.objects.entity.boss.EntityCQRLich;
 
 public class BossConfigLich extends AbstractBossConfig<EntityCQRLich> {
-	//These are all the same accross all bosses
+	
+	@Override
+	protected float getBaseHealthDefaultValue() {
+		return 200F;
+	}	//These are all the same accross all bosses
 		@Override
 		protected double getStandardAttackDamageDefaultValue() {
 			return 2.0D;

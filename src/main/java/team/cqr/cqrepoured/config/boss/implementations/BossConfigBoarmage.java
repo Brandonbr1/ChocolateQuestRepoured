@@ -5,6 +5,10 @@ import team.cqr.cqrepoured.objects.entity.boss.EntityCQRBoarmage;
 
 public class BossConfigBoarmage extends AbstractBossConfig<EntityCQRBoarmage> {
 
+	protected float getBaseHealthDefaultValue() {
+		return 250F;
+	}
+
 	//These are all the same accross all bosses
 	@Override
 	protected double getStandardAttackDamageDefaultValue() {

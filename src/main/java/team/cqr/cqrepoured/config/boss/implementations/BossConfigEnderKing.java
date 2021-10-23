@@ -1,10 +1,15 @@
 package team.cqr.cqrepoured.config.boss.implementations;
 
+import team.cqr.cqrepoured.config.CQRConfig;
 import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
 import team.cqr.cqrepoured.objects.entity.boss.endercalamity.EntityCQREnderKing;
 
 public class BossConfigEnderKing extends AbstractBossConfig<EntityCQREnderKing> {
-	//These are all the same accross all bosses
+	
+	@Override
+	protected float getBaseHealthDefaultValue() {
+		return 2F * CQRConfig.baseHealths.Enderman;
+	}	//These are all the same accross all bosses
 		@Override
 		protected double getStandardAttackDamageDefaultValue() {
 			return 2.0D;

@@ -4,6 +4,11 @@ import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
 import team.cqr.cqrepoured.objects.entity.boss.endercalamity.EntityCQREnderCalamity;
 
 public class BossConfigEnderCalamity extends AbstractBossConfig<EntityCQREnderCalamity> {
+
+	@Override
+	protected float getBaseHealthDefaultValue() {
+		return 300F;
+	}
 	//These are all the same accross all bosses
 		@Override
 		protected double getStandardAttackDamageDefaultValue() {
@@ -59,4 +64,5 @@ public class BossConfigEnderCalamity extends AbstractBossConfig<EntityCQREnderCa
 		protected boolean isHealthRegenEnabledDefaultValue() {
 			return true;
 		}
+
 }
