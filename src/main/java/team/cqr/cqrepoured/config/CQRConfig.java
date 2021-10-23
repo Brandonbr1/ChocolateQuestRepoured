@@ -19,6 +19,7 @@ import team.cqr.cqrepoured.config.boss.implementations.BossConfigLich;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigNecromancer;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigPirateCaptain;
 import team.cqr.cqrepoured.config.boss.implementations.BossConfigSpecterLord;
+import team.cqr.cqrepoured.config.boss.implementations.BossConfigWalkerKing;
 import team.cqr.cqrepoured.objects.entity.boss.EntityCQRGiantTortoise;
 import team.cqr.cqrepoured.objects.entity.boss.EntityCQRNetherDragon;
 import team.cqr.cqrepoured.structuregen.structurefile.CQStructure;
@@ -220,6 +221,7 @@ public class CQRConfig {
 		public BossConfigNecromancer necromancerConfig = new BossConfigNecromancer();
 		public BossConfigPirateCaptain pirateCaptainConfig = new BossConfigPirateCaptain();
 		public BossConfigSpecterLord spectreLordConfig = new BossConfigSpecterLord();
+		public BossConfigWalkerKing walkerKingConfig = new BossConfigWalkerKing();
 	}
 
 	public static class BossDamageCaps {
