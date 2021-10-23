@@ -206,11 +206,6 @@ public class EntityCQRExterminator extends AbstractEntityCQRBoss<BossConfigExter
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.Exterminatior;
-	}
-
-	@Override
 	protected EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.ILLAGERS;
 	}

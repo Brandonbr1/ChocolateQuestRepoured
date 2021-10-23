@@ -117,11 +117,6 @@ public class EntityCQRLich extends AbstractEntityCQRMageBase<BossConfigLich> imp
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.Lich;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.UNDEAD;
 	}

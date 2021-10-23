@@ -484,11 +484,6 @@ public class EntityCQRWalkerKing extends AbstractEntityCQRBoss<BossConfigWalkerK
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.AbyssWalkerKing;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.WALKERS;
 	}

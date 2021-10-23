@@ -48,11 +48,6 @@ public class EntityCQRPirateCaptain extends AbstractEntityCQRBoss<BossConfigPira
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.PirateCaptain;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.PIRATE;
 	}

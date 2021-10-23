@@ -143,11 +143,6 @@ public class EntityCQREnderKing extends AbstractEntityCQRBoss<BossConfigEnderKin
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return 2F * CQRConfig.baseHealths.Enderman;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.ENDERMEN;
 	}

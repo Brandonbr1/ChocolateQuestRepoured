@@ -314,11 +314,6 @@ public class EntityCQRGiantTortoise extends AbstractEntityCQRBoss<BossConfigGian
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.GiantTortoise;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.BEASTS;
 	}

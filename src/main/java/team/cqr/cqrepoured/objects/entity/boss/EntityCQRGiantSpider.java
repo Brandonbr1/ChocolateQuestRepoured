@@ -217,11 +217,6 @@ public class EntityCQRGiantSpider extends AbstractEntityCQRBoss<BossConfigGiantS
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.GiantSpider;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.BEASTS;
 	}

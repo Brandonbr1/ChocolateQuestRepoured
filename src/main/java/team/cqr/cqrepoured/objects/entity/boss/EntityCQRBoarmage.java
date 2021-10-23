@@ -104,11 +104,6 @@ public class EntityCQRBoarmage extends AbstractEntityCQRMageBase<BossConfigBoarm
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.Boarmage;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.UNDEAD;
 	}

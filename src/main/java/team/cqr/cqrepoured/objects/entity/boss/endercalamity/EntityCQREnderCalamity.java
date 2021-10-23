@@ -509,11 +509,6 @@ public class EntityCQREnderCalamity extends AbstractEntityCQRBoss<BossConfigEnde
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.EnderCalamity;
-	}
-
-	@Override
 	protected EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.ENDERMEN;
 	}

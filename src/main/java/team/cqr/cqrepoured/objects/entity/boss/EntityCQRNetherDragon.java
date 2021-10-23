@@ -310,11 +310,6 @@ public class EntityCQRNetherDragon extends AbstractEntityCQRBoss<BossConfigNethe
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.NetherDragon;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.UNDEAD;
 	}

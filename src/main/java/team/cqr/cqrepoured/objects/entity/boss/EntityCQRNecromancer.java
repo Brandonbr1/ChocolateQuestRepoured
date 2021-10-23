@@ -160,11 +160,6 @@ public class EntityCQRNecromancer extends AbstractEntityCQRMageBase<BossConfigNe
 	}
 
 	@Override
-	public float getBaseHealth() {
-		return CQRConfig.baseHealths.Necromancer;
-	}
-
-	@Override
 	public EDefaultFaction getDefaultFaction() {
 		return EDefaultFaction.UNDEAD;
 	}
