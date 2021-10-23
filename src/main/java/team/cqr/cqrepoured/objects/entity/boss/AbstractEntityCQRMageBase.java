@@ -12,10 +12,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import team.cqr.cqrepoured.config.boss.AbstractBossConfig;
 import team.cqr.cqrepoured.init.CQRItems;
 import team.cqr.cqrepoured.objects.entity.bases.AbstractEntityCQRBoss;
 
-public abstract class AbstractEntityCQRMageBase extends AbstractEntityCQRBoss {
+public abstract class AbstractEntityCQRMageBase<C extends AbstractBossConfig<?>> extends AbstractEntityCQRBoss<C> {
 
 	private static final DataParameter<Boolean> IDENTITY_HIDDEN = EntityDataManager.<Boolean>createKey(AbstractEntityCQRMageBase.class, DataSerializers.BOOLEAN);
 
